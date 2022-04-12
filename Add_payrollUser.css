@@ -87,12 +87,12 @@ body{
     align-items: center;
     border: 0px solid green;
 }
-/*label class */
+
 .label {
     min-width: 140px;
 }
 
-/* label element*/ 
+
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
@@ -104,11 +104,27 @@ label {
     opacity: 1;
     font-family: Roboto;
 }
-/*input class */
 .input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+}
+/* UC 3 Setting profile pic  into form using radio button */
+.profile-radio-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-radio-content > label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile {
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 12px;
 }
