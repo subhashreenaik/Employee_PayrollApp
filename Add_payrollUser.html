@@ -163,5 +163,14 @@
       </div>
         </form>
 </div>
+<!---uc:8 set event listener -->
+<script>
+    const salary = document.querySelector('#salary');
+        const output = document.querySelector('.salary-output');
+        output.textContent = salary.value;
+        salary.addEventListener('input', function () {
+            output.textContent = salary.value;
+        });
+</script>
 </body>
 </html>
