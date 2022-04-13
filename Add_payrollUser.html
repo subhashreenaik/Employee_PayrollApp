@@ -24,13 +24,14 @@
     </header>
     <!--/* UC2 : Ability to create a form header and input text element for name  */-->
 <div class="form-content">
-    <form class="form" action="#" onsubmit="save(event); return false">
+    <form class="form" action="#" onsubmit = "save(event); return false">
     
         <div class="form-head">Employee Payroll form</div>
         <div class="row-content">
             <label class="label text" for="name">Name</label>
             <input class="input" type="text" name="name"
             placeholder="your name.." required>
+            <error-output class="text-error" for="text"></error-output>
         </div>
         <!--/* UC2 : Ability to set profile pic in the form  */-->
         <div class="row-content">
@@ -163,14 +164,31 @@
       </div>
         </form>
 </div>
-<!---uc:8 set event listener -->
+<!---uc:8 set event listener for salary and employee name -->
 <script>
-    const salary = document.querySelector('#salary');
+    window.addEventListener('DOMContentLoaded',(event)=>{
+        const name=document.querySelector('#name');
+        const textError =document.querySelector('.text-error');
+        name.addEventListener('input',function(){
+        if(name.value.length == 0){
+            textError.textContent="";
+            return;
+        }
+        try{
+            (new Employee_payroll()).name =name.value;
+            textError.textContent="";
+        }catch(e){
+            textError.textContent = e;
+        }
+        
+        });
+        const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
         output.textContent = salary.value;
         salary.addEventListener('input', function () {
             output.textContent = salary.value;
         });
+    });
 </script>
 </body>
 </html>

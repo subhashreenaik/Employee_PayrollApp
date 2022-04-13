@@ -213,3 +213,9 @@ select {
       align-items: flex-start;
     }
   }
+  text-error{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+  }
