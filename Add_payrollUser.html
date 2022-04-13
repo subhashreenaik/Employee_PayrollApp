@@ -24,26 +24,25 @@
     </header>
     <!--/* UC2 : Ability to create a form header and input text element for name  */-->
 <div class="form-content">
-    <form class="form" action="#" onsubmit = "save(event); return false">
+    <form class="form" action="#" onreset="resetButton()" onsubmit="save()">
     
         <div class="form-head">Employee Payroll form</div>
         <div class="row-content">
             <label class="label text" for="name">Name</label>
-            <input class="input" type="text" name="name"
-            placeholder="your name.." required>
-            <error-output class="text-error" for="text"></error-output>
+            <input type="text" name="name" id="name" class="input" placeholder="Your Name ..." required>
+            <error-output class="text-error" ></error-output>
         </div>
         <!--/* UC2 : Ability to set profile pic in the form  */-->
         <div class="row-content">
             <label class="label text" for="profile">Profile image</label>
             <div class="profile-radio-content">
                 <label>
-                    <input type="radio" id="profile1" value="/assets/profile-images/Ellipse -3.png">
-                        <img class="profile" id="image1" src="/assets/profile-images/Ellipse -3.png">
+                    <input type="radio" id="profile1" value="assets/profile-images/Ellipse -1.png">
+                        <img class="profile" id="image1" src="assets/profile-images/Ellipse -1.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile2" value="/assets/profile-images/Ellipse -1.png">
-                        <img class="profile" id="image2" src="/assets/profile-images/Ellipse -1.png">
+                        <input type="radio" id="profile2" value="assets/profile-images/Ellipse -2.png">
+                        <img class="profile" id="image2" src="assets/profile-images/Ellipse -2.png">
                     </label>
                     <label>
                         <input type="radio" id="profil3" value="/assets/profile-images/Ellipse -8.png">
@@ -156,7 +155,7 @@
             <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px"></textarea>
            </div>
         <div class="buttonParent">
-            <a href="/home.html" class="resetButton button cancelButton">Cancel</a>
+            <a href="home.html" class="resetButton button cancelButton">Cancel</a>
         <div class="submit-reset">
              <button type="submit" class="button submitButton" id="submitButton">Submit</button>
              <button type="reset" class="resetButton button">Reset</button>
@@ -164,31 +163,7 @@
       </div>
         </form>
 </div>
-<!---uc:8 set event listener for salary and employee name -->
-<script>
-    window.addEventListener('DOMContentLoaded',(event)=>{
-        const name=document.querySelector('#name');
-        const textError =document.querySelector('.text-error');
-        name.addEventListener('input',function(){
-        if(name.value.length == 0){
-            textError.textContent="";
-            return;
-        }
-        try{
-            (new Employee_payroll()).name =name.value;
-            textError.textContent="";
-        }catch(e){
-            textError.textContent = e;
-        }
-        
-        });
-        const salary = document.querySelector('#salary');
-        const output = document.querySelector('.salary-output');
-        output.textContent = salary.value;
-        salary.addEventListener('input', function () {
-            output.textContent = salary.value;
-        });
-    });
+<script script src="Employee_payroll.js" ></script> 
 </script>
 </body>
 </html>
