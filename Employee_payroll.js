@@ -121,3 +121,26 @@ allItems.forEach(item => {
 });
 return selItems;
 }
+
+const getInputValueById = (id) =>{
+    let value = document.querySelector(id).value;
+    return value;
+}
+const getInputElementValue = (id) =>{
+    let value = document.getInputValueById(id).value;
+    return value;
+}
+
+const resetForm = () => {
+
+    document.querySelector('#name').value = '';
+    document.querySelectorAll('[name=profile]') = false;
+    document.querySelectorAll('[name=gender]') = false;
+    document.querySelectorAll('[name=department]') = false;
+    document.querySelector('#salary').value = '';
+    document.querySelector('#day').value = '1';
+    document.querySelector('#month').value = 'January';
+    document.querySelector('#year').value = '2022';
+    document.querySelector('#note').value = '';
+}
+
